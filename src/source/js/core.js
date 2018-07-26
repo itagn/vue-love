@@ -77,7 +77,7 @@ export default {
       document.body.addEventListener('click', e => {
         const { clientX: oldX, clientY: oldY } = e
         const newX = oldX - 50, newY = oldY - 50
-        loveing(newX, newY, container)
+        this.loveing(newX, newY, container)
       })
       // canvas动画
       const canvas = document.querySelector('#canvas'), WIDTH = window.innerWidth, HEIGHT = window.innerHeight
