@@ -13,7 +13,7 @@ export default {
   },
   data () {
     return {
-      timeLen: [1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000]
+      timeLen: [1000 * 60 * 60 * 24 * 365, 1000 * 60 * 60 * 24, 1000 * 60 * 60, 1000 * 60, 1000]
     }
   },
   computed: {
@@ -31,11 +31,13 @@ export default {
   methods:{
     showTime () {
       const time = new Date().getTime() - this.initDate
-      const days = time / this.timeLen[0] | 0
-      const hours = (time - (days * this.timeLen[0])) / (this.timeLen[1]) | 0
-      const minutes = (time - (days * this.timeLen[0]) - (hours * this.timeLen[1])) / (this.timeLen[2]) | 0
-      const seconds = (time - (days * this.timeLen[0]) - (hours * this.timeLen[1]) - (minutes * this.timeLen[2])) / this.timeLen[3] | 0
-      const meetTime = ` ${ days }天 ${ hours }时 ${ minutes }分 ${ seconds }秒`
+      const years = time / this.timeLen[0] | 0
+      const days = (time - (years * this.timeLen[0])) / (this.timeLen[1]) | 0
+      const hours = (time - (years * this.timeLen[0]) - (days * this.timeLen[1])) / (this.timeLen[2]) | 0
+      const minutes = (time - (years * this.timeLen[0]) - (days * this.timeLen[1]) - (hours * this.timeLen[2])) / (this.timeLen[3]) | 0
+      const seconds = (time - (years * this.timeLen[0]) - (days * this.timeLen[1]) - (hours * this.timeLen[2]) - (minutes * this.timeLen[3])) / this.timeLen[4] | 0
+      let meetTime = `${ days }天 ${ hours }小时 ${ minutes }分钟 ${ seconds }秒`
+      if (years !== 0) meetTime = `${ years }年 ${ meetTime }`
       this.meetDom.innerText = meetTime
     },
     loop () {
