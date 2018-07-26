@@ -1,0 +1,23 @@
+{
+  "name": "vue-love",
+  "version": "1.0.0",
+  "description": "a cute component byrecording time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itagn/vue-love.git"
+  },
+  "keywords": [
+    "vue",
+    "love"
+  ],
+  "author": "itagn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itagn/vue-love/issues"
+  },
+  "homepage": "https://github.com/itagn/vue-love#readme"
+}
