@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       pData: {
-        call: '狗呆与女神相识',
+        call: 'xxx',
         time: '2018/7/9 01:08:00'
       }
     }
